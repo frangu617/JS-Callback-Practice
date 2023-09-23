@@ -4,7 +4,12 @@ function move(element) {
   function moveToCoordinates(left, bottom) {
     element.style.left = left + "px";
     element.style.bottom = bottom + "px";
-    setInterval(console.log("left: " + left + " bottom: " + bottom), 1);
+    // setInterval(console.log("left: " + left + " bottom: " + bottom), 1);
+    
+    element.style.zIndex = 1;
+    
+
+    
   }
 
   function moveWithArrowKeys(left, bottom, callback) {
@@ -14,6 +19,12 @@ function move(element) {
 
     element.style.left = x + "px";
     element.style.bottom = y + "px";
+    element.style.zIndex = 2;
+    
+
+  
+
+
 
     function moveCharacter() {
       // setInterval(function(){
@@ -40,6 +51,7 @@ function move(element) {
 
       element.style.left = x + "px";
       element.style.bottom = y + "px";
+      checkZIndex()
     }
 
     setInterval(moveCharacter, 1);
@@ -79,4 +91,15 @@ function move(element) {
     to: moveToCoordinates,
     withArrowKeys: moveWithArrowKeys,
   };
+}
+
+function checkZIndex() {
+if (element1.style.bottom>element2.style.bottom){
+    element1.style.zIndex = 0;
+    element2.style.zIndex = 9999;
+}
+else{
+    element1.style.zIndex = 9999;
+    element2.style.zIndex = 0;
+}
 }
