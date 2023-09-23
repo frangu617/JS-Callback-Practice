@@ -51,7 +51,7 @@ function move(element) {
 
       element.style.left = x + "px";
       element.style.bottom = y + "px";
-      checkZIndex()
+      
     }
 
     setInterval(moveCharacter, 1);
@@ -93,13 +93,3 @@ function move(element) {
   };
 }
 
-function checkZIndex() {
-if (element1.style.bottom>element2.style.bottom){
-    element1.style.zIndex = 0;
-    element2.style.zIndex = 9999;
-}
-else{
-    element1.style.zIndex = 9999;
-    element2.style.zIndex = 0;
-}
-}
